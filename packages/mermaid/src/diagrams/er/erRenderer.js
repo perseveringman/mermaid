@@ -642,6 +642,11 @@ export const draw = function (text, id, _version, diagObj) {
   configureSvgSize(svg, height, width, conf.useMaxWidth);
 
   svg.attr('viewBox', `${svgBounds.x - padding} ${svgBounds.y - padding} ${width} ${height}`);
+  return {
+    graph: g,
+    diagramType: 'ERD',
+    extra: diagObj.db.getEntities(),
+  };
 }; // draw
 
 /**

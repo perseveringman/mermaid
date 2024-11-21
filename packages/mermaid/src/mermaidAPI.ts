@@ -92,6 +92,7 @@ export interface RenderResult {
    * ```
    */
   bindFunctions?: (element: Element) => void;
+  data: any;
 }
 
 function processAndSetConfigs(text: string) {
@@ -461,8 +462,9 @@ const render = async function (
 
   // -------------------------------------------------------------------------------
   // Draw the diagram with the renderer
+  let data = null;
   try {
-    await diag.renderer.draw(text, id, version, diag);
+    data = await diag.renderer.draw(text, id, version, diag);
   } catch (e) {
     if (config.suppressErrorRendering) {
       removeTempElements();
@@ -510,6 +512,7 @@ const render = async function (
     diagramType,
     svg: svgCode,
     bindFunctions: diag.db.bindFunctions,
+    data,
   };
 };
 

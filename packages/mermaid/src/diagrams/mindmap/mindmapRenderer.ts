@@ -194,6 +194,11 @@ export const draw: DrawDefinition = async (text, id, _version, diagObj) => {
     conf.mindmap?.padding ?? defaultConfig.mindmap.padding,
     conf.mindmap?.useMaxWidth ?? defaultConfig.mindmap.useMaxWidth
   );
+
+  return {
+    graph: cy,
+    diagramType: 'Mindmap',
+  };
 };
 
 export default {

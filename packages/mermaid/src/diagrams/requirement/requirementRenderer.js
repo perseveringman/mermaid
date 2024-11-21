@@ -368,6 +368,15 @@ export const draw = (text, id, _version, diagObj) => {
   configureSvgSize(svg, height, width, conf.useMaxWidth);
 
   svg.attr('viewBox', `${svgBounds.x - padding} ${svgBounds.y - padding} ${width} ${height}`);
+
+  return {
+    graph: g,
+    diagramType: 'requirements',
+    extra: {
+      requirements,
+      elements,
+    },
+  };
 };
 
 // cspell:ignore txts

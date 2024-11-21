@@ -118,6 +118,15 @@ export const draw = function (text, id, version, diagObj) {
   diagram.attr('viewBox', `${box.startx} -25 ${width} ${height + extraVertForTitle}`);
   diagram.attr('preserveAspectRatio', 'xMinYMin meet');
   diagram.attr('height', height + extraVertForTitle + 25);
+
+  return {
+    graph: {
+      title,
+      actors,
+      tasks,
+    },
+    diagramType: 'journey',
+  };
 };
 
 export const bounds = {

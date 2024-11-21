@@ -471,6 +471,11 @@ export const draw = async function (text, id, _version, diag) {
     label.insertBefore(rect, label.firstChild);
     // }
   }
+
+  return {
+    graph: g,
+    diagramType: CSS_DIAGRAM,
+  };
 };
 
 export default {

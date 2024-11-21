@@ -1,6 +1,6 @@
 {
-  "name": "mermaid",
-  "version": "11.0.0-alpha.7",
+  "name": "better-mermaid",
+  "version": "11.0.0-alpha.11",
   "description": "Markdown-ish syntax for generating flowcharts, mindmaps, sequence diagrams, class diagrams, gantt charts, git graphs and more.",
   "type": "module",
   "module": "./dist/mermaid.core.mjs",
@@ -69,7 +69,7 @@
   },
   "dependencies": {
     "@braintree/sanitize-url": "^7.0.1",
-    "@mermaid-js/parser": "workspace:^",
+    "@mermaid-js/parser": "0.3.0",
     "cytoscape": "^3.28.1",
     "cytoscape-cose-bilkent": "^4.1.0",
     "d3": "^7.9.0",

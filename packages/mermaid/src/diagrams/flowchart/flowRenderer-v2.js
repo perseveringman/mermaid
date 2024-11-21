@@ -505,6 +505,11 @@ export const draw = async function (text, id, _version, diagObj) {
       }
     }
   });
+
+  return {
+    graph: g,
+    diagramType: 'flowchart',
+  };
 };
 
 export default {

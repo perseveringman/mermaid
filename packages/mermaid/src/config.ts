@@ -149,7 +149,7 @@ export const sanitize = (options: any) => {
   }
   // Checking that options are not in the list of excluded options
   ['secure', ...(siteConfig.secure ?? [])].forEach((key) => {
-    if (Object.hasOwn(options, key)) {
+    if (Object.prototype.hasOwnProperty.call(options, key)) {
       // DO NOT attempt to print options[key] within `${}` as a malicious script
       // can exploit the logger's attempt to stringify the value and execute arbitrary code
       log.debug(`Denied attempt to modify a secure key ${key}`, options[key]);

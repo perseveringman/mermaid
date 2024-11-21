@@ -862,6 +862,17 @@ export const draw = function (txt, id, ver, diagObj) {
     gitGraphConfig.diagramPadding,
     gitGraphConfig.useMaxWidth ?? conf.useMaxWidth
   );
+
+  return {
+    graph: {
+      commits: allCommitsDict,
+      branches,
+      branchPos,
+      commitPos,
+      gitGraphConfig,
+    },
+    diagramType: 'gitgraph',
+  };
 };
 
 export default {

@@ -379,6 +379,11 @@ export const draw = async function (text: string, id: string, _version: string, 
       label.insertBefore(rect, label.firstChild);
     }
   }
+
+  return {
+    graph: g,
+    diagramType: 'classDiagram',
+  };
 };
 
 /**

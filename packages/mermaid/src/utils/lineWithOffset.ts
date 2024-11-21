@@ -47,7 +47,7 @@ export const getLineFunctionsWithOffset = (
   return {
     x: function (d: Point | [number, number], i: number, data: (Point | [number, number])[]) {
       let offset = 0;
-      if (i === 0 && Object.hasOwn(markerOffsets, edge.arrowTypeStart)) {
+      if (i === 0 && Object.prototype.hasOwnProperty.call(markerOffsets, edge.arrowTypeStart)) {
         // Handle first point
         // Calculate the angle and delta between the first two points
         const { angle, deltaX } = calculateDeltaAndAngle(data[0], data[1]);
@@ -56,7 +56,10 @@ export const getLineFunctionsWithOffset = (
           markerOffsets[edge.arrowTypeStart as keyof typeof markerOffsets] *
           Math.cos(angle) *
           (deltaX >= 0 ? 1 : -1);
-      } else if (i === data.length - 1 && Object.hasOwn(markerOffsets, edge.arrowTypeEnd)) {
+      } else if (
+        i === data.length - 1 &&
+        Object.prototype.hasOwnProperty.call(markerOffsets, edge.arrowTypeEnd)
+      ) {
         // Handle last point
         // Calculate the angle and delta between the last two points
         const { angle, deltaX } = calculateDeltaAndAngle(
@@ -73,13 +76,16 @@ export const getLineFunctionsWithOffset = (
     y: function (d: Point | [number, number], i: number, data: (Point | [number, number])[]) {
       // Same handling as X above
       let offset = 0;
-      if (i === 0 && Object.hasOwn(markerOffsets, edge.arrowTypeStart)) {
+      if (i === 0 && Object.prototype.hasOwnProperty.call(markerOffsets, edge.arrowTypeStart)) {
         const { angle, deltaY } = calculateDeltaAndAngle(data[0], data[1]);
         offset =
           markerOffsets[edge.arrowTypeStart as keyof typeof markerOffsets] *
           Math.abs(Math.sin(angle)) *
           (deltaY >= 0 ? 1 : -1);
-      } else if (i === data.length - 1 && Object.hasOwn(markerOffsets, edge.arrowTypeEnd)) {
+      } else if (
+        i === data.length - 1 &&
+        Object.prototype.hasOwnProperty.call(markerOffsets, edge.arrowTypeEnd)
+      ) {
         const { angle, deltaY } = calculateDeltaAndAngle(
           data[data.length - 1],
           data[data.length - 2]
